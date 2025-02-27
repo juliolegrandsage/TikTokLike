@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function()
     
     });
 
-    // Gestion des commentaires
+    // Gestion de l'interface des commentaires
     const commentBtn = document.getElementById('comment-btn');
     const commentCounter = document.getElementById('comment-count');
     let commentCount = 0;
@@ -39,4 +39,27 @@ document.addEventListener('DOMContentLoaded', function()
     {
         commentSection.style.display = 'none';
     });
+
+    // Envoi de commentaire
+    const commentForm = document.getElementById('comment-input');
+    const sendBtn = document.getElementById('sendbtn');
+
+    sendBtn.addEventListener('click', function()
+    {
+        let commentText = commentForm.value.trim();
+        if(commentText != ""){
+            // Création d'un élément de commentaire
+            let commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+            commentElement.innerHTML = 
+            `<p class='comment_username'>Utilisateur</p>
+            <p class='comment'>${commentText}</p>`;
+
+            commentSection.prepend(commentElement);
+            commentForm.value = "";
+            commentCount++;
+            commentCounter.innerText = commentCount;
+        }
+    });
+
 });
