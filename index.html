@@ -8,13 +8,14 @@
 </head>
 <body>
 
-    <div class="video" autoplay muted loop>
+    <div class="video">
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search" id="search-input">
             <button class="searchbtn">Search</button>
 
         </div>
-        <video src="226795_tiny.mp4"></video>
+        <img src="bouton-pause.png" alt="" srcset="" class="pause-btn" id="pause-btn">
+        <video src="226795_tiny.mp4"  autoplay muted loop id="video"></video>
         <div class="buttons">
             <button id="like-btn">❤️<span id="like-count">0</span></button>
             <button id="comment-btn">💬<span id="comment-count">0</span></button>
@@ -28,6 +29,11 @@
         <input type="text" class="comment-input" placeholder="Ajouter un commentaire" id="comment-input">
         <button class="sendbtn" id="sendbtn">Send</button>
         </div>
+        </div>
+        <div class="video_footer">
+            <button class="footer_btn">Acceuil</button>
+            <button class="footer_btn">Recommandation</button>
+            <button class="footer_btn">Truc</button>
         </div>
     </div>
     <script src="script.js"></script>

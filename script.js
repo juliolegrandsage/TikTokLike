@@ -62,4 +62,34 @@ document.addEventListener('DOMContentLoaded', function()
         }
     });
 
+    // Gestion de la pause de la vidéo
+    const video = document.getElementById('video');
+
+    video.addEventListener('click', function()
+    {
+        if(video.paused){
+            video.play();
+            ShowPauseBtn();
+        }
+        else{
+            video.pause();
+            ShowPauseBtn();
+        }
+    });
+
+    // Fonction pour faire apparaitre un symbole de pause
+
+    ShowPauseBtn = function()
+    {
+        const pauseBtn = document.getElementById('pause-btn');
+        pauseBtn.style.display = 'block';
+        setTimeout(HidePauseBtn, 500);
+    }
+
+    HidePauseBtn = function()
+    {
+        const pauseBtn = document.getElementById('pause-btn');
+        pauseBtn.style.display = 'none';
+    }
+
 });
